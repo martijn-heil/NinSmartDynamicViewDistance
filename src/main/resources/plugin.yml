@@ -1,0 +1,6 @@
+name: NinSmartDynamicViewDistance
+version: @version@
+author: Ninjoh
+depend: [NinCommands]
+main: com.gitlab.martijn_heil.ninsmartdynamicviewdistance.NinSmartDynamicViewDistance
+api-version: 1.18
