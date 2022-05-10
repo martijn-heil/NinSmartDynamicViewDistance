@@ -146,7 +146,9 @@ class DynamicViewDistanceController(
 			server.onlinePlayers.forEach {
 				var lastKnownPosition = lastKnownPositions[it]
 
-				if (lastKnownPosition == null || it.location.distance(lastKnownPosition.location) > 0.5) {
+				if (lastKnownPosition == null ||
+					lastKnownPosition.location.world != it.location.world ||
+					it.location.distance(lastKnownPosition.location) > 0.5) {
 					lastKnownPosition = LastKnownPosition(it.location, server.currentTick)
 					lastKnownPositions[it] = lastKnownPosition
 				}
