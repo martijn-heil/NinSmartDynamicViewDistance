@@ -75,7 +75,9 @@ class DynamicViewDistanceController(
 	private val listener = object : Listener {
 		@EventHandler(priority = MONITOR)
 		fun onPlayerTeleport(e: PlayerTeleportEvent) {
-			updateViewDistanceFor(e.player)
+			server.scheduler.scheduleSyncDelayedTask(plugin, {
+				if (!isDestroyed) updateViewDistanceFor(e.player)
+			}, 0)
 		}
 
 		@EventHandler(priority = MONITOR)
