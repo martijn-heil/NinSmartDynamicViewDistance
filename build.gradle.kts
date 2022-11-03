@@ -63,7 +63,6 @@ defaultTasks = mutableListOf("shadowJar")
 
 repositories {
 	maven { url = URI("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") }
-//	maven { url = URI("https://papermc.io/repo/repository/maven-public/") }
 	maven { url = URI("https://repo.kryptonmc.org/releases") }
 	maven { url = URI("https://jitpack.io") }
 
@@ -82,8 +81,7 @@ idea {
 }
 
 dependencies {
-	paperDevBundle("1.18.2-R0.1-SNAPSHOT")
-	//compileOnly("org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT") { isChanging = true }
+	paperDevBundle("1.19.2-R0.1-SNAPSHOT")
 	compileOnly("com.gitlab.martijn-heil:NinCommands:-SNAPSHOT") { isChanging = true }
 	//compileOnly(fileTree("lib") { include("*.jar") })
 	shadow(kotlin("stdlib"))
